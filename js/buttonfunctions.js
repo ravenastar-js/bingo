@@ -34,3 +34,9 @@ const setupButtonFunctions = () => {
 };
 
 document.addEventListener('DOMContentLoaded', setupButtonFunctions);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupButtonFunctions();
+    updateClearButtonState();
+});

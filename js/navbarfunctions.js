@@ -57,4 +57,7 @@ TNB.addEventListener('click', () => {
     }
 });
 
-setupNavbarFunctions();
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupNavbarFunctions();
+});
