@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!-- Meta tag geral -->
+      <title>Bingo (BETA)</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Em desenvolvimento: Bingo inspirado em 'BINGO DO CELLBIT' de raul3963.">
+      <meta name="theme-color" content="#af4c4c">
+      <meta name="robots" content="index, follow">
+      <link rel="shortcut icon" href="img/bingo.png">
+   
+      <!-- Metatags Open Graph (Facebook e Instagram) -->
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="Bingo (BETA)">
+      <meta property="og:description" content="Em desenvolvimento: Bingo inspirado em 'BINGO DO CELLBIT' de raul3963. ">
+      <meta property="og:image" content="https://i.imgur.com/mvj5py4.png">
+      <meta property="og:url" content="">
+   
+      <!-- Metatags Twitter -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Bingo (BETA)">
+      <meta name="twitter:description" content="Em desenvolvimento: Bingo inspirado em 'BINGO DO CELLBIT' de raul3963. ">
+      <meta name="twitter:image" content="https://i.imgur.com/mvj5py4.png">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <div id="wrap">
+      <h1 id="table-title" class="table-title" contenteditable="true">Título do Bingo</h1>
+      <div id="bingo-grid"></div>
+    </div>
+    <button id="toggle-navbar" class="button">
+      <i class="fas fa-arrow-up"></i> Mostrar/Ocultar Opções </button>
+    <button id="TNB" class="button">
+      <i class="fas fa-toggle-on"></i>
+    </button>
+    <button id="view-notes-button" class="button notes-button">
+      <i class="fas fa-sticky-note"></i> Ver Anotações </button>
+    <br>
+    <!-- Navbar -->
+    <div id="navbar" class="navbar">
+      <button id="lock-button" class="button">
+        <i class="fas fa-lock"></i> Bloquear/Desbloquear </button>
+      <button id="save-button" class="button">
+        <i class="fas fa-save"></i> Salvar Preset </button>
+      <button id="view-presets-button" class="button">
+        <i class="fas fa-eye"></i> Ver Presets </button>
+      <button id="clear-cells-button" class="button">
+        <i class="fas fa-eraser"></i> Limpar Campos </button>
+      <input type="file" id="preset-file" accept=".txt">
+      <button id="download-presets" class="button">
+        <i class="fas fa-download"></i> Baixar Presets </button>
+      <br>
+      <br>
+      <label for="grid-rows">Linhas:</label>
+      <select id="grid-rows">
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="number" id="custom-rows" min="1" max="20" style="display: none;" placeholder="Linhas Personalizado">
+      <label for="grid-cols">Colunas:</label>
+      <select id="grid-cols">
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input type="number" id="custom-cols" min="1" max="20" style="display: none;" placeholder="Colunas Personalizado">
+      <button id="apply-size" class="button">
+        <i class="fas fa-arrows-alt"></i> Aplicar Tamanho </button>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Presets Salvos</h2>
+          <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="preset-search" placeholder="Pesquisar presets...">
+          <ul id="preset-list"></ul>
+        </div>
+      </div>
+    </div>
+    <div id="notes-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Anotações do Bingo</h2>
+          <span class="close-button">&times;</span>
+        </div>
+        <div class="modal-body">
+          <textarea id="bingo-notes" placeholder="Escreva suas anotações aqui..."></textarea>
+        </div>
+      </div>
+    </div>
+    <script src="js/modalFunctions.js"></script>
+    <script src="js/presetsFunctions.js"></script>
+    <!-- Carregado antes de main.js -->
+    <script src="js/gridFunctions.js"></script>
+    <script src="js/buttonFunctions.js"></script>
+    <script src="js/navbarFunctions.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Carregado por último -->
+  </body>
+</html>
