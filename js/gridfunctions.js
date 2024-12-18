@@ -9,6 +9,19 @@ const adjustGridSize = () => {
 window.addEventListener('resize', adjustGridSize);
 document.addEventListener('DOMContentLoaded', adjustGridSize);
 
+
+const updateClearButtonState = () => {
+    const clearCellsButton = document.getElementById('clear-cells-button');
+    const cells = document.querySelectorAll('.celula');
+    const anyNonEmpty = Array.from(cells)
+        .some(cell => cell.textContent.trim() !== '');
+    clearCellsButton.disabled = !anyNonEmpty;
+    clearCellsButton.classList.toggle('disabled', !anyNonEmpty);
+    clearCellsButton.classList.toggle('red', !anyNonEmpty);
+    clearCellsButton.classList.toggle('green', anyNonEmpty);
+};
+
+
 const createGrid = (rows, cols) => {
     const bingoGrid = document.getElementById('bingo-grid');
     bingoGrid.innerHTML = '';
@@ -68,24 +81,11 @@ applySizeButton.addEventListener('click', () => {
     createGrid(rows, cols);
 });
 
+
+
+
+
 const setupGridFunctions = () => {
     createGrid(4, 4);
 };
 
-const updateClearButtonState = () => {
-    const clearCellsButton = document.getElementById('clear-cells-button');
-    const cells = document.querySelectorAll('.celula');
-    const anyNonEmpty = Array.from(cells)
-        .some(cell => cell.textContent.trim() !== '');
-    clearCellsButton.disabled = !anyNonEmpty;
-    clearCellsButton.classList.toggle('disabled', !anyNonEmpty);
-    clearCellsButton.classList.toggle('red', !anyNonEmpty);
-    clearCellsButton.classList.toggle('green', anyNonEmpty);
-};
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    setupGridFunctions();
-    updateClearButtonState();
-});
