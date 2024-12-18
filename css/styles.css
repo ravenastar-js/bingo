@@ -27,7 +27,6 @@ html {
 }
 
 #bingo-grid {
-    z-index: 2;
     display: grid;
     gap: 10px; /* Espaçamento entre as células */
     width: 100%;
