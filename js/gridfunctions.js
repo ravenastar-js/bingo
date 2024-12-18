@@ -89,3 +89,5 @@ const setupGridFunctions = () => {
     createGrid(4, 4);
 };
 
+document.addEventListener('DOMContentLoaded', updateClearButtonState);
+document.addEventListener('DOMContentLoaded', setupGridFunctions);

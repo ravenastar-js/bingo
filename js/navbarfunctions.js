@@ -58,6 +58,4 @@ TNB.addEventListener('click', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    setupNavbarFunctions();
-});
+document.addEventListener('DOMContentLoaded', setupNavbarFunctions);

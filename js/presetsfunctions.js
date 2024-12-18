@@ -328,3 +328,6 @@ const updateButtonsState = () => {
 // Chamar `updateButtonsState` a cada X milissegundos (por exemplo, 10 segundos)
 const intervalTime = 1000; // 10000 milissegundos = 10 segundos
 setInterval(updateButtonsState, intervalTime);
+document.addEventListener('DOMContentLoaded', updateDownloadButtonState);
+document.addEventListener('DOMContentLoaded', setupTitleFunctions);
+document.addEventListener('DOMContentLoaded', setupPresetFunctions);
