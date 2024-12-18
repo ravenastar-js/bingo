@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    setupGridFunctions();
     setupPresetFunctions();
     setupButtonFunctions();
     setupNavbarFunctions();

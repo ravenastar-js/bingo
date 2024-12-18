@@ -83,3 +83,4 @@ const updateClearButtonState = () => {
     clearCellsButton.classList.toggle('green', anyNonEmpty);
 };
 
+setupGridFunctions();
