@@ -1,11 +1,10 @@
 import { json } from "../utils/json";
 
-export const onRequestGet: PagesFunction = async ({ request }) => {
+export const onRequestGet = async ({ request }) => {
   try {
     const cache = await caches.open("resources:cache");
-    const keys = await cache.keys(); // Obtém todas as chaves do cache
+    const keys = await cache.keys();
 
-    // Exclui todas as entradas do cache
     const deletePromises = keys.map(key => cache.delete(key));
     const results = await Promise.all(deletePromises);
     const allDeleted = results.every(result => result);
