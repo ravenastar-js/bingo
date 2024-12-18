@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     setupButtonFunctions();
     updateClearButtonState();
@@ -6,6 +7,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupPresetFunctions();
     setupTitleFunctions();
-    updateClearButtonState();
     updateDownloadButtonState();
 });

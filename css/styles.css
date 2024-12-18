@@ -27,6 +27,7 @@ html {
 }
 
 #bingo-grid {
+    z-index: 2;
     display: grid;
     gap: 10px; /* Espaçamento entre as células */
     width: 100%;
@@ -178,7 +179,10 @@ button i,
     border: none;
     outline: none;
     cursor: text;
+    direction: ltr; /* Garante que a direção do texto seja da esquerda para a direita */
+    unicode-bidi: normal; /* Assegura que o texto seja exibido normalmente */
 }
+
 
 /*--------------------------------------------------------------
 # PARA DISPOSITIVOS MÓVEIS

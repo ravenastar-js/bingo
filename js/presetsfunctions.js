@@ -2,7 +2,7 @@ const saveButton = document.getElementById('save-button');
 const downloadButton = document.getElementById('download-presets');
 const presetFileInput = document.getElementById('preset-file');
 const viewPresetsButton = document.getElementById('view-presets-button');
-
+const tableTitleElement = document.getElementById('table-title');
 
 // presetsfunctions.js
 const savePreset = () => {
@@ -121,7 +121,7 @@ const updateDownloadButtonState = () => {
 };
 
 const updateSaveButtonState = () => {
-    const tableTitleElement = document.getElementById('table-title');
+
     const hasTitle = tableTitleElement.textContent.trim() !== '' && tableTitleElement.textContent.trim() !== 'Título do Bingo';
     const bingoGrid = document.getElementById('bingo-grid');
     const cells = bingoGrid.querySelectorAll('.celula');
@@ -162,7 +162,6 @@ const setupTitleFunctions = () => {
     
     // Atualizar o título conforme o texto é inserido
     tableTitle.addEventListener('input', () => {
-        updateTableTitle(tableTitle.textContent);
         updateSaveButtonState(); // Adiciona a chamada aqui
     });
     
